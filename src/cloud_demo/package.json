@@ -1,0 +1,17 @@
+{
+  "name": "standy-cloud-function",
+  "version": "1.0.0",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "functions-framework --target=standyApp",
+    "dev": "functions-framework --target=standyApp --port=8080",
+    "deploy": "gcloud functions deploy standyApp --gen2 --runtime=nodejs18 --region=asia-south1 --source=. --entry-point=standyApp --trigger-http"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.0.0",
+    "@google-cloud/firestore": "^7.4.0"
+  }
+}
