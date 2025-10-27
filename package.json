@@ -1,17 +1,26 @@
 {
   "name": "standy-cloud-function",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "scripts": {
     "start": "functions-framework --target=standyApp",
     "dev": "functions-framework --target=standyApp --port=8080",
-    "deploy": "gcloud functions deploy standyApp --gen2 --runtime=nodejs18 --region=asia-south1 --source=. --entry-point=standyApp --trigger-http"
+    "deploy": "gcloud functions deploy standyApp --gen2 --runtime=nodejs18 --trigger-http --allow-authenticated --region=asia-south1 --entry-point=standyApp"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sid-191/cloud_demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sid-191/cloud_demo/issues"
+  },
+  "homepage": "https://github.com/sid-191/cloud_demo#readme",
   "dependencies": {
-    "@google-cloud/functions-framework": "^3.0.0",
-    "@google-cloud/firestore": "^7.4.0"
+    "@google-cloud/firestore": "^7.11.6",
+    "@google-cloud/functions-framework": "^4.0.0"
   }
 }
