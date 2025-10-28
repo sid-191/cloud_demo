@@ -6,6 +6,8 @@ const {
   saveAvailabilityEntry
 } = require('./firestore');
 const { standupCard, availabilityCard } = require('./card');
+const {Firestore} = require('@google-cloud/firestore');
+const firestore = new Firestore();
 
 functions.http('standyApp', async (req, res) => {
   const event = req.body;
@@ -14,8 +16,8 @@ functions.http('standyApp', async (req, res) => {
   if (event.type === "ADDED_TO_SPACE") {
     const name = event.user?.displayName || "there";
     return res.json({
-      text: `Thank you for adding me ${name}
-Type 's', 'S' or 'standup' for standup card and 'a', 'A' or 'availability' for availability card`
+      text: `Thank you for adding me ${name}.
+Type 's', 'S' or 'standup' for standup card, 'a', 'A' or 'availability' for availability card.`
     });
   }
 
@@ -34,7 +36,7 @@ Type 's', 'S' or 'standup' for standup card and 'a', 'A' or 'availability' for a
       return res.json({ text: "Thank you! Your standup has been submitted" });
     }
 
-   // Availability
+    // Availability
     if (event.action.actionMethodName === "submitAvailability") {
       const inputs = event.common?.formInputs || {};
       const userEmail = event.user?.email || "unknown@example.com";
@@ -55,7 +57,7 @@ Type 's', 'S' or 'standup' for standup card and 'a', 'A' or 'availability' for a
   if (event.type === "MESSAGE") {
     const msg = (event.message?.argumentText || "").trim().toLowerCase();
     const userEmail = event.user?.email || "unknown@example.com";
-    
+
     if (msg === "s" || msg === "standup") {
       const dateStr = new Date().toISOString().slice(0, 10);
 
@@ -81,19 +83,41 @@ Type 's', 'S' or 'standup' for standup card and 'a', 'A' or 'availability' for a
       return res.json(standupCard());
     }
 
-  if (msg === "a" || msg === "availability") {
+    if (msg === "a" || msg === "availability") {
       const [howMuch, howLong, sinceWhen, currentProject, remarks, lastUpdatedText] =
         await getAvailabilityFields(userEmail);
       return res.json(availabilityCard(howMuch, howLong, sinceWhen, currentProject, remarks, lastUpdatedText));
     }
 
+    // 🟩 NEW FEATURE — STATUS COMMAND
+    if (msg === "status") {
+      const todayStr = new Date().toISOString().slice(0, 10);
+      const todayCollection = firestore.collection("Standup").doc(todayStr).collection("entries");
+      const snapshot = await todayCollection.get();
+      
+      if (snapshot.empty) {
+        return res.json({ text: `No standup records found for today (${todayStr}).` });
+      }
+      
+      let statusText = `*Standup Status for ${todayStr}*\n\n`;
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        statusText += `${doc.id}:\n`;
+        statusText += `• Yesterday: ${data.yesterday || "_Not filled_"}\n`;
+        statusText += `• Today: ${data.today || "_Not filled_"}\n`;
+        statusText += `• Blockers: ${data.blockers || "_Not filled_"}\n\n`;
+      });
+      
+      return res.json({ text: statusText });
+    }
+
     return res.json({
-      text: "Type 's', 'S' or 'standup' for standup card and 'a', 'A' or 'availability' for availability card"
+      text: "Type 's' or 'standup' for standup card, 'a' or 'availability' for availability card, and 'status' for today's team report."
     });
   }
 
   // Fallback for unknown events
   res.json({
-    text: "Type 's', 'S' or 'standup' for standup card and 'a', 'A' or 'availability' for availability card"
+    text: "Type 's', 'standup', 'a', 'availability', or 'status' for status summary."
   });
 });
