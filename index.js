@@ -14,7 +14,8 @@ functions.http('standyApp', async (req, res) => {
   if (event.type === "ADDED_TO_SPACE") {
     const name = event.user?.displayName || "there";
     return res.json({
-      text: `Thank you for adding me ${name}`
+      text: `Thank you for adding me ${name}
+      ! Type 's', 'S' or 'standup' for standup card and 'a', 'A' or 'availability' for availability card`
     });
   }
 
