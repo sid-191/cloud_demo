@@ -1,0 +1,16 @@
+steps:
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args:
+      - 'functions'
+      - 'deploy'
+      - 'standyApp'              # Function name (entrypoint)
+      - '--gen2'
+      - '--runtime=nodejs18'
+      - '--region=asia-south1'
+      - '--source=.'
+      - '--entry-point=standyApp'
+      - '--trigger-http'
