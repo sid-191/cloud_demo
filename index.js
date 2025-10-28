@@ -15,7 +15,7 @@ functions.http('standyApp', async (req, res) => {
     const name = event.user?.displayName || "there";
     return res.json({
       text: `Thank you for adding me ${name}
-! Type 's', 'S' or 'standup' for standup card and 'a', 'A' or 'availability' for availability card`
+! type 's', 'S' or 'standup' for standup card and 'a', 'A' or 'availability' for availability card`
     });
   }
 
