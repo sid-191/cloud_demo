@@ -7,7 +7,7 @@ steps:
     args:
       - 'functions'
       - 'deploy'
-      - 'standyApp'              # Function name (entrypoint)
+      - 'standyApp'              # Function name (entrypoint);
       - '--gen2'
       - '--runtime=nodejs18'
       - '--region=asia-south1'
