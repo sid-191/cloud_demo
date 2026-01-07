@@ -1,26 +1,32 @@
 {
-  "name": "standy-cloud-function",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "functions-framework --target=standyApp",
-    "dev": "functions-framework --target=standyApp --port=8080",
-    "deploy": "gcloud functions deploy standyApp --gen2 --runtime=nodejs18 --trigger-http --allow-authenticated --region=asia-south1 --entry-point=standyApp"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sid-191/cloud_demo.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sid-191/cloud_demo/issues"
-  },
-  "homepage": "https://github.com/sid-191/cloud_demo#readme",
-  "dependencies": {
-    "@google-cloud/firestore": "^7.11.6",
-    "@google-cloud/functions-framework": "^4.0.0"
-  }
+ "name": "standy-cloud-function",
+ "version": "1.0.0",
+ "main": "index.js",
+ "type": "module",
+ "engines": {
+   "node": ">=18.0.0"
+ },
+ "scripts": {
+   "start": "functions-framework --target=helloHttp",
+   "start:oauth": "functions-framework --target=standyOAuth --port=8080",
+   "dev": "functions-framework --target=helloHttp --port=8080",
+   "deploy:internal": "gcloud run deploy standy-internal --source=. --platform=managed --region=asia-south2 --allow-unauthenticated=false",
+   "deploy:oauth": "gcloud run deploy standy-oauth --source=. --platform=managed --region=asia-south2 --allow-unauthenticated=true --set-env-vars=ENTRY_POINT=standyOAuth"
+ },
+ "dependencies": {
+   "@google-cloud/functions-framework": "^3.0.0",
+   "@google-cloud/firestore": "^7.4.0",
+   "@google/genai": "^0.15.0",
+   "dotenv": "^16.4.5",
+    "fast-fuzzy": "^1.12.0",
+   "@fast-csv/format": "4.3.0",
+   "@google-cloud/storage": "^7.10.0",
+   "googleapis": "^133.0.0",
+   "csvtojson": "^2.0.10",
+   "node-fetch": "^2.6.7"
+ }
 }
+
+
+
+

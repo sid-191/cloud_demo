@@ -1,123 +1,91 @@
-const functions = require('@google-cloud/functions-framework');
-const { 
-  getLatestStandup, 
-  getAvailabilityFields,
-  saveStandupEntry,
-  saveAvailabilityEntry
-} = require('./firestore');
-const { standupCard, availabilityCard } = require('./card');
-const {Firestore} = require('@google-cloud/firestore');
+import { Firestore } from '@google-cloud/firestore';
+import fetch from 'node-fetch';
+
 const firestore = new Firestore();
 
-functions.http('standyApp', async (req, res) => {
-  const event = req.body;
+const ZOHO_CLIENT_ID = process.env.ZOHO_CLIENT_ID;
+const ZOHO_CLIENT_SECRET = process.env.ZOHO_CLIENT_SECRET;
+const ZOHO_SCOPE = process.env.ZOHO_SCOPE || "ZohoProjects.timesheet.ALL";
+const ZOHO_REDIRECT_URI = process.env.ZOHO_REDIRECT_URI;
+const ZOHO_AUTH_DOMAIN = process.env.ZOHO_AUTH_DOMAIN || "https://accounts.zoho.com";
 
-  // Welcome message
-  if (event.type === "ADDED_TO_SPACE") {
-    const name = event.user?.displayName || "there";
-    return res.json({
-      text: `Thank you for adding me ${name}.
-Type 's', 'S' or 'standup' for standup card, 'a', 'A' or 'availability' for availability card.`
-    });
-  }
+/**
+ * Cloud Run HTTP handler for Zoho OAuth
+ */
+export async function helloHttp(req, res) {
+  try {
+    const path = req.path.toLowerCase();
 
-  // Handle card submissions (standup / availability)
-  if (event.type === "CARD_CLICKED" && event.action) {
-    // Standup
-    if (event.action.actionMethodName === "submitStandup") {
-      const inputs = event.common?.formInputs || {};
-      const userEmail = event.user?.email || "unknown@example.com";
-      const yesterday = inputs.yesterday?.stringInputs?.value?.[0] || "";
-      const today = inputs.today?.stringInputs?.value?.[0] || "";
-      const blockers = inputs.blockers?.stringInputs?.value?.[0] || "";
-      const dateStr = new Date().toISOString().slice(0, 10);
+    // -----------------------------
+    // Step 1: Redirect user to Zoho OAuth
+    // -----------------------------
+    if (path === '/zohoauth') {
+      const email = req.query.email;
+      if (!email) return res.status(400).send("Missing 'email' query param.");
 
-      await saveStandupEntry(userEmail, dateStr, yesterday, today, blockers);
-      return res.json({ text: "Thank you! Your standup has been submitted" });
+      const state = Buffer.from(email).toString('base64');
+      const authUrl = `${ZOHO_AUTH_DOMAIN}/oauth/v2/auth?scope=${encodeURIComponent(
+        ZOHO_SCOPE
+      )}&client_id=${ZOHO_CLIENT_ID}&response_type=code&access_type=offline&redirect_uri=${encodeURIComponent(
+        ZOHO_REDIRECT_URI
+      )}&state=${state}&prompt=consent`;
+
+      console.log(`[Zoho OAuth] Redirecting user ${email} to Zoho`);
+      return res.redirect(authUrl);
     }
 
-    // Availability
-    if (event.action.actionMethodName === "submitAvailability") {
-      const inputs = event.common?.formInputs || {};
-      const userEmail = event.user?.email || "unknown@example.com";
-      const fields = {
-        howMuch: inputs.howMuch?.stringInputs?.value?.[0] || "",
-        howLong: inputs.howLong?.stringInputs?.value?.[0] || "",
-        sinceWhen: inputs.sinceWhen?.stringInputs?.value?.[0] || "",
-        currentProject: inputs.currentProject?.stringInputs?.value?.[0] || "",
-        remarks: inputs.remarks?.stringInputs?.value?.[0] || ""
-      };
+    // -----------------------------
+    // Step 2: Zoho OAuth Callback
+    // -----------------------------
+    if (path === '/zoho/callback') {
+      const { code, state } = req.query;
+      if (!code || !state) return res.status(400).send("Missing code or state.");
 
-      await saveAvailabilityEntry(userEmail, fields);
-      return res.json({ text: "Thank you! Your availability has been submitted" });
-    }
-  }
+      const userEmail = Buffer.from(state, 'base64').toString().trim().toLowerCase();
 
-  // Respond to messages to show the correct card
-  if (event.type === "MESSAGE") {
-    const msg = (event.message?.argumentText || "").trim().toLowerCase();
-    const userEmail = event.user?.email || "unknown@example.com";
-
-    if (msg === "s" || msg === "standup") {
-      const dateStr = new Date().toISOString().slice(0, 10);
-
-      // Get last record (if it exists)
-      const { doc: lastDoc, date: lastDate } = await getLatestStandup(userEmail, dateStr);
-      
-      if (lastDoc && lastDoc.exists) {
-        const data = lastDoc.data() || {};
-        // If today's record exists: prefill all fields with today's values
-        if (dateStr === lastDate) {
-          return res.json(standupCard(
-            data.yesterday || "",
-            data.today || "",
-            data.blockers || ""
-          ));
-        } else {
-          // For older records: yesterday=previous "today", blockers=previous "blockers", today=""
-          return res.json(standupCard(data.today || "", "", data.blockers || ""));
-        }
-      }
-      
-      // No previous record found
-      return res.json(standupCard());
-    }
-
-    if (msg === "a" || msg === "availability") {
-      const [howMuch, howLong, sinceWhen, currentProject, remarks, lastUpdatedText] =
-        await getAvailabilityFields(userEmail);
-      return res.json(availabilityCard(howMuch, howLong, sinceWhen, currentProject, remarks, lastUpdatedText));
-    }
-
-    // 🟩 NEW FEATURE — STATUS COMMAND
-    if (msg === "status") {
-      const todayStr = new Date().toISOString().slice(0, 10);
-      const todayCollection = firestore.collection("Standup").doc(todayStr).collection("entries");
-      const snapshot = await todayCollection.get();
-      
-      if (snapshot.empty) {
-        return res.json({ text: `No standup records found for today (${todayStr}).` });
-      }
-      
-      let statusText = `*Standup Status for ${todayStr}*\n\n`;
-      snapshot.forEach(doc => {
-        const data = doc.data();
-        statusText += `${doc.id}:\n`;
-        statusText += `• Yesterday: ${data.yesterday || "_Not filled_"}\n`;
-        statusText += `• Today: ${data.today || "_Not filled_"}\n`;
-        statusText += `• Blockers: ${data.blockers || "_Not filled_"}\n\n`;
+      // Exchange code for tokens
+      const tokenUrl = `${ZOHO_AUTH_DOMAIN}/oauth/v2/token`;
+      const params = new URLSearchParams({
+        code,
+        client_id: ZOHO_CLIENT_ID,
+        client_secret: ZOHO_CLIENT_SECRET,
+        redirect_uri: ZOHO_REDIRECT_URI,
+        grant_type: 'authorization_code',
       });
-      
-      return res.json({ text: statusText });
+
+      const tokenResp = await fetch(tokenUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params,
+      });
+
+      const tokenData = await tokenResp.json();
+      if (!tokenData.access_token) {
+        console.error('[Zoho OAuth] No access_token returned', tokenData);
+        return res.status(500).send("<h3>Zoho authentication failed.</h3>");
+      }
+
+      // Store tokens in Firestore
+      await firestore.collection('zoho_tokens').doc(userEmail).set({
+        access_token: tokenData.access_token,
+        refresh_token: tokenData.refresh_token,
+        expires_in: tokenData.expires_in,
+        api_domain: tokenData.api_domain,
+        time: new Date().toISOString(),
+      });
+
+      console.log(`[Zoho OAuth] Successfully stored tokens for ${userEmail}`);
+      return res.send(
+        `<h3>✅ Zoho successfully connected!</h3><div>You may close this page and return to chat.</div>`
+      );
     }
 
-    return res.json({
-      text: "Type 's' or 'standup' for standup card, 'a' or 'availability' for availability card, and 'status' for today's team report."
-    });
+    // -----------------------------
+    // Default handler: unknown path
+    // -----------------------------
+    res.status(404).send("Endpoint not found.");
+  } catch (err) {
+    console.error('[standyOAuth] Error', err);
+    res.status(500).send("<h3>Internal Server Error</h3>");
   }
-
-  // Fallback for unknown events
-  res.json({
-    text: "Type 's', 'standup', 'a', 'availability', or 'status' for status summary."
-  });
-});
+}
