@@ -1,0 +1,1321 @@
+{
+  "meta": {
+    "comparedAt": "2026-02-18T10:56:42.835Z",
+    "portalA": {
+      "id": "242627118",
+      "name": "Hub 242627118"
+    },
+    "portalB": {
+      "id": "242627105",
+      "name": "Hub 242627105"
+    }
+  },
+  "summary": {
+    "totalDifferences": 32,
+    "onlyInA": 32,
+    "onlyInB": 0,
+    "modified": 0
+  },
+  "diff": {
+    "properties": {
+      "onlyInA": [
+        {
+          "name": "currentgenerators__c",
+          "label": "Current Generator(s)",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "contacts"
+        },
+        {
+          "name": "languages__c",
+          "label": "Languages",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "contacts"
+        },
+        {
+          "name": "leadsource",
+          "label": "Lead Source",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "contacts"
+        },
+        {
+          "name": "leadstatus",
+          "label": "Status",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "contacts"
+        },
+        {
+          "name": "level__c",
+          "label": "Level",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "contacts"
+        },
+        {
+          "name": "next_followup_date__c",
+          "label": "Next FollowUp Date",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "contacts"
+        },
+        {
+          "name": "numberofemployees",
+          "label": "Employees",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "contacts"
+        },
+        {
+          "name": "numberoflocations__c",
+          "label": "Number of Locations",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "contacts"
+        },
+        {
+          "name": "primary__c",
+          "label": "Primary",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "contacts"
+        },
+        {
+          "name": "productinterest__c",
+          "label": "Product Interest",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "contacts"
+        },
+        {
+          "name": "rating",
+          "label": "Rating",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "contacts"
+        },
+        {
+          "name": "region__c",
+          "label": "Region",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "contacts"
+        },
+        {
+          "name": "siccode__c",
+          "label": "SIC Code",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "contacts"
+        },
+        {
+          "name": "active__c",
+          "label": "Active",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "companies"
+        },
+        {
+          "name": "annual_revenue__c",
+          "label": "Annual Revenue",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "companies"
+        },
+        {
+          "name": "average_opportunity_amount__c",
+          "label": "Average Opportunity Amount",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "companies"
+        },
+        {
+          "name": "billing_country__c",
+          "label": "Billing Country",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "companies"
+        },
+        {
+          "name": "customerpriority__c",
+          "label": "Customer Priority",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "companies"
+        },
+        {
+          "name": "isintegration__c",
+          "label": "IsIntegration",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "companies"
+        },
+        {
+          "name": "numberoflocations__c",
+          "label": "Number of Locations",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "companies"
+        },
+        {
+          "name": "site",
+          "label": "Account Site",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "companies"
+        },
+        {
+          "name": "sla__c",
+          "label": "SLA",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "companies"
+        },
+        {
+          "name": "slaexpirationdate__c",
+          "label": "SLA Expiration Date",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "companies"
+        },
+        {
+          "name": "slaserialnumber__c",
+          "label": "SLA Serial Number",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "companies"
+        },
+        {
+          "name": "upsellopportunity__c",
+          "label": "Upsell Opportunity",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "companies"
+        },
+        {
+          "name": "currentgenerators__c",
+          "label": "Current Generator(s)",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "deals"
+        },
+        {
+          "name": "deliveryinstallationstatus__c",
+          "label": "Delivery/Installation Status",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "deals"
+        },
+        {
+          "name": "maincompetitors__c",
+          "label": "Main Competitor(s)",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "deals"
+        },
+        {
+          "name": "ordernumber__c",
+          "label": "Order Number",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "deals"
+        },
+        {
+          "name": "trackingnumber__c",
+          "label": "Tracking Number",
+          "type": "",
+          "fieldType": "",
+          "groupName": "",
+          "objectType": "deals"
+        }
+      ],
+      "onlyInB": [],
+      "modified": [],
+      "same": []
+    },
+    "pipelines": {
+      "onlyInA": [
+        {
+          "id": "deals_salesforce_-_prospect",
+          "label": "Salesforce - Prospect",
+          "displayOrder": 0,
+          "stages": [
+            {
+              "id": "d23a0e55-073a-4f97-a58b-ba515db68efb",
+              "label": "Prospecting",
+              "displayOrder": 0
+            },
+            {
+              "id": "519ba605-011a-46f2-9f5c-23579aaf4c29",
+              "label": "Perception Analysis",
+              "displayOrder": 1
+            },
+            {
+              "id": "5ed2205a-4784-4e4e-a76e-1fb45da0b944",
+              "label": "Proposal/Price Quote",
+              "displayOrder": 2
+            },
+            {
+              "id": "43e44c51-61c7-436f-8375-50e88f97c35c",
+              "label": "Negotiation/Review",
+              "displayOrder": 3
+            },
+            {
+              "id": "f97dccfd-7c13-44dd-974d-c84261e6d5da",
+              "label": "Closed Won",
+              "displayOrder": 4
+            },
+            {
+              "id": "2dc7f980-4a21-4e05-b640-1bb5e85a14a1",
+              "label": "Closed Lost",
+              "displayOrder": 5
+            }
+          ]
+        },
+        {
+          "id": "deals_salesforce_-_customer",
+          "label": "Salesforce - Customer",
+          "displayOrder": 0,
+          "stages": [
+            {
+              "id": "388d2dd2-af90-4f18-a8b9-15f7b5a29155",
+              "label": "Prospecting",
+              "displayOrder": 0
+            },
+            {
+              "id": "62129e00-aec1-4f52-9de2-294b52f8afe3",
+              "label": "Qualification",
+              "displayOrder": 1
+            },
+            {
+              "id": "3bc311e1-dac9-4d85-b980-fe33ed65eb97",
+              "label": "Needs Analysis",
+              "displayOrder": 2
+            },
+            {
+              "id": "1fc8c69e-8a81-40eb-bddd-e7fd85fdc746",
+              "label": "Value Proposition",
+              "displayOrder": 3
+            },
+            {
+              "id": "ab1741e7-5744-43ac-98ea-2667e358ca8d",
+              "label": "Negotiation/Review",
+              "displayOrder": 4
+            },
+            {
+              "id": "5521a076-f011-423f-8702-0fef5b868195",
+              "label": "Closed Won",
+              "displayOrder": 5
+            },
+            {
+              "id": "da7faec0-b7af-41a2-8d14-c3abbe8cd232",
+              "label": "Closed Lost",
+              "displayOrder": 6
+            }
+          ]
+        }
+      ],
+      "onlyInB": [],
+      "modified": [],
+      "same": [
+        {
+          "id": "deals_sales_pipeline",
+          "label": "Sales Pipeline",
+          "displayOrder": 0,
+          "stages": [
+            {
+              "id": "appointmentscheduled",
+              "label": "Appointment Scheduled",
+              "displayOrder": 0
+            },
+            {
+              "id": "qualifiedtobuy",
+              "label": "Qualified To Buy",
+              "displayOrder": 1
+            },
+            {
+              "id": "presentationscheduled",
+              "label": "Presentation Scheduled",
+              "displayOrder": 2
+            },
+            {
+              "id": "decisionmakerboughtin",
+              "label": "Decision Maker Bought-In",
+              "displayOrder": 3
+            },
+            {
+              "id": "contractsent",
+              "label": "Contract Sent",
+              "displayOrder": 4
+            },
+            {
+              "id": "closedwon",
+              "label": "Closed Won",
+              "displayOrder": 5
+            },
+            {
+              "id": "closedlost",
+              "label": "Closed Lost",
+              "displayOrder": 6
+            }
+          ]
+        }
+      ]
+    },
+    "schemas": {
+      "onlyInA": [],
+      "onlyInB": [],
+      "modified": [],
+      "same": []
+    },
+    "associations": {
+      "onlyInA": [],
+      "onlyInB": [],
+      "modified": [],
+      "same": [
+        {
+          "typeId": 279,
+          "label": "Type 279",
+          "category": ""
+        },
+        {
+          "typeId": 5,
+          "label": "Primary",
+          "category": ""
+        },
+        {
+          "typeId": 931,
+          "label": "Billing Contact",
+          "category": ""
+        },
+        {
+          "typeId": 3,
+          "label": "Type 3",
+          "category": ""
+        },
+        {
+          "typeId": 341,
+          "label": "Type 341",
+          "category": ""
+        },
+        {
+          "typeId": 16,
+          "label": "Type 16",
+          "category": ""
+        }
+      ]
+    },
+    "forms": {
+      "onlyInA": [],
+      "onlyInB": [],
+      "modified": [],
+      "same": []
+    }
+  },
+  "scanA": {
+    "meta": {
+      "portalId": "242627118",
+      "portalName": "Hub 242627118",
+      "scannedAt": "2026-02-18T10:56:42.834Z",
+      "toolVersion": "1.0.0"
+    },
+    "summary": {
+      "complexity": "simple",
+      "totalProperties": 30,
+      "totalPipelines": 3,
+      "totalCustomObjects": 0,
+      "totalAssociationLabels": 7
+    },
+    "properties": {
+      "contacts": [
+        {
+          "name": "currentgenerators__c",
+          "label": "Current Generator(s)",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "languages__c",
+          "label": "Languages",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "leadsource",
+          "label": "Lead Source",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "leadstatus",
+          "label": "Status",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "level__c",
+          "label": "Level",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "next_followup_date__c",
+          "label": "Next FollowUp Date",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "numberofemployees",
+          "label": "Employees",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "numberoflocations__c",
+          "label": "Number of Locations",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "primary__c",
+          "label": "Primary",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "productinterest__c",
+          "label": "Product Interest",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "rating",
+          "label": "Rating",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "region__c",
+          "label": "Region",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "siccode__c",
+          "label": "SIC Code",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        }
+      ],
+      "companies": [
+        {
+          "name": "active__c",
+          "label": "Active",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "annual_revenue__c",
+          "label": "Annual Revenue",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "average_opportunity_amount__c",
+          "label": "Average Opportunity Amount",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "billing_country__c",
+          "label": "Billing Country",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "customerpriority__c",
+          "label": "Customer Priority",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "isintegration__c",
+          "label": "IsIntegration",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "numberoflocations__c",
+          "label": "Number of Locations",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "site",
+          "label": "Account Site",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "sla__c",
+          "label": "SLA",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "slaexpirationdate__c",
+          "label": "SLA Expiration Date",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "slaserialnumber__c",
+          "label": "SLA Serial Number",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "upsellopportunity__c",
+          "label": "Upsell Opportunity",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        }
+      ],
+      "deals": [
+        {
+          "name": "currentgenerators__c",
+          "label": "Current Generator(s)",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "deliveryinstallationstatus__c",
+          "label": "Delivery/Installation Status",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "maincompetitors__c",
+          "label": "Main Competitor(s)",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "ordernumber__c",
+          "label": "Order Number",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        },
+        {
+          "name": "trackingnumber__c",
+          "label": "Tracking Number",
+          "type": "",
+          "fieldType": "",
+          "groupName": ""
+        }
+      ]
+    },
+    "propertyGroups": {
+      "contacts": [
+        {
+          "name": "contact_activity",
+          "label": "Contact activity",
+          "displayOrder": 0
+        },
+        {
+          "name": "deal_information",
+          "label": "Deal information",
+          "displayOrder": 0
+        },
+        {
+          "name": "order_information",
+          "label": "Order Information",
+          "displayOrder": 0
+        },
+        {
+          "name": "sales_properties",
+          "label": "Sales properties",
+          "displayOrder": 0
+        },
+        {
+          "name": "calculated_contact_information",
+          "label": "Calculated Contact Information",
+          "displayOrder": 0
+        },
+        {
+          "name": "contact_information",
+          "label": "Contact information",
+          "displayOrder": 0
+        },
+        {
+          "name": "multi_account_management",
+          "label": "Multi Account Management",
+          "displayOrder": 0
+        },
+        {
+          "name": "social_media_information",
+          "label": "Social media information",
+          "displayOrder": 0
+        },
+        {
+          "name": "web_analytics_history",
+          "label": "Web analytics history",
+          "displayOrder": 0
+        },
+        {
+          "name": "conversion_information",
+          "label": "Conversion information",
+          "displayOrder": 0
+        },
+        {
+          "name": "email_information",
+          "label": "Email information",
+          "displayOrder": 0
+        },
+        {
+          "name": "facebook_ads_properties",
+          "label": "Facebook Ads properties",
+          "displayOrder": 0
+        },
+        {
+          "name": "contact_lifecycle_stage_properties",
+          "label": "Contact Lifecycle Stage Properties",
+          "displayOrder": 0
+        },
+        {
+          "name": "sms_information",
+          "label": "SMS information",
+          "displayOrder": 0
+        },
+        {
+          "name": "salesforce_information",
+          "label": "Salesforce Information",
+          "displayOrder": 0
+        }
+      ],
+      "companies": [
+        {
+          "name": "company_activity",
+          "label": "Company activity",
+          "displayOrder": 0
+        },
+        {
+          "name": "deal_information",
+          "label": "Deal information",
+          "displayOrder": 0
+        },
+        {
+          "name": "sales_properties",
+          "label": "Sales properties",
+          "displayOrder": 0
+        },
+        {
+          "name": "buyer_intent",
+          "label": "Buyer Intent",
+          "displayOrder": 0
+        },
+        {
+          "name": "company_signals",
+          "label": "Company Signals",
+          "displayOrder": 0
+        },
+        {
+          "name": "company_information",
+          "label": "Company information",
+          "displayOrder": 0
+        },
+        {
+          "name": "social_media_information",
+          "label": "Social media information",
+          "displayOrder": 0
+        },
+        {
+          "name": "web_analytics_history",
+          "label": "Web analytics history",
+          "displayOrder": 0
+        },
+        {
+          "name": "conversion_information",
+          "label": "Conversion information",
+          "displayOrder": 0
+        },
+        {
+          "name": "target_accounts_information",
+          "label": "Target accounts information",
+          "displayOrder": 0
+        },
+        {
+          "name": "company_lifecycle_stage_properties",
+          "label": "Company lifecycle stage properties",
+          "displayOrder": 0
+        },
+        {
+          "name": "salesforce_information",
+          "label": "Salesforce Information",
+          "displayOrder": 0
+        }
+      ],
+      "deals": [
+        {
+          "name": "deal_activity",
+          "label": "Deal activity",
+          "displayOrder": 0
+        },
+        {
+          "name": "deal_revenue",
+          "label": "Deal revenue",
+          "displayOrder": 0
+        },
+        {
+          "name": "calculated_deal_information",
+          "label": "Calculated Deal Information",
+          "displayOrder": 0
+        },
+        {
+          "name": "deal_information",
+          "label": "Deal information",
+          "displayOrder": 0
+        },
+        {
+          "name": "historical_properties",
+          "label": "Historical Properties",
+          "displayOrder": 0
+        },
+        {
+          "name": "multi_account_management",
+          "label": "Multi Account Management",
+          "displayOrder": 0
+        },
+        {
+          "name": "predictive_deal_score_feature_properties",
+          "label": "Predictive Deal Score Feature Properties",
+          "displayOrder": 0
+        },
+        {
+          "name": "analytics_history",
+          "label": "Analytics history",
+          "displayOrder": 0
+        },
+        {
+          "name": "deal_stage_properties",
+          "label": "Deal Stage Properties",
+          "displayOrder": 0
+        },
+        {
+          "name": "salesforce_information",
+          "label": "Salesforce Information",
+          "displayOrder": 0
+        }
+      ]
+    },
+    "pipelines": {
+      "deals": [
+        {
+          "id": "deals_salesforce_-_prospect",
+          "label": "Salesforce - Prospect",
+          "displayOrder": 0,
+          "stages": [
+            {
+              "id": "d23a0e55-073a-4f97-a58b-ba515db68efb",
+              "label": "Prospecting",
+              "displayOrder": 0
+            },
+            {
+              "id": "519ba605-011a-46f2-9f5c-23579aaf4c29",
+              "label": "Perception Analysis",
+              "displayOrder": 1
+            },
+            {
+              "id": "5ed2205a-4784-4e4e-a76e-1fb45da0b944",
+              "label": "Proposal/Price Quote",
+              "displayOrder": 2
+            },
+            {
+              "id": "43e44c51-61c7-436f-8375-50e88f97c35c",
+              "label": "Negotiation/Review",
+              "displayOrder": 3
+            },
+            {
+              "id": "f97dccfd-7c13-44dd-974d-c84261e6d5da",
+              "label": "Closed Won",
+              "displayOrder": 4
+            },
+            {
+              "id": "2dc7f980-4a21-4e05-b640-1bb5e85a14a1",
+              "label": "Closed Lost",
+              "displayOrder": 5
+            }
+          ]
+        },
+        {
+          "id": "deals_salesforce_-_customer",
+          "label": "Salesforce - Customer",
+          "displayOrder": 0,
+          "stages": [
+            {
+              "id": "388d2dd2-af90-4f18-a8b9-15f7b5a29155",
+              "label": "Prospecting",
+              "displayOrder": 0
+            },
+            {
+              "id": "62129e00-aec1-4f52-9de2-294b52f8afe3",
+              "label": "Qualification",
+              "displayOrder": 1
+            },
+            {
+              "id": "3bc311e1-dac9-4d85-b980-fe33ed65eb97",
+              "label": "Needs Analysis",
+              "displayOrder": 2
+            },
+            {
+              "id": "1fc8c69e-8a81-40eb-bddd-e7fd85fdc746",
+              "label": "Value Proposition",
+              "displayOrder": 3
+            },
+            {
+              "id": "ab1741e7-5744-43ac-98ea-2667e358ca8d",
+              "label": "Negotiation/Review",
+              "displayOrder": 4
+            },
+            {
+              "id": "5521a076-f011-423f-8702-0fef5b868195",
+              "label": "Closed Won",
+              "displayOrder": 5
+            },
+            {
+              "id": "da7faec0-b7af-41a2-8d14-c3abbe8cd232",
+              "label": "Closed Lost",
+              "displayOrder": 6
+            }
+          ]
+        },
+        {
+          "id": "deals_sales_pipeline",
+          "label": "Sales Pipeline",
+          "displayOrder": 0,
+          "stages": [
+            {
+              "id": "appointmentscheduled",
+              "label": "Appointment Scheduled",
+              "displayOrder": 0
+            },
+            {
+              "id": "qualifiedtobuy",
+              "label": "Qualified To Buy",
+              "displayOrder": 1
+            },
+            {
+              "id": "presentationscheduled",
+              "label": "Presentation Scheduled",
+              "displayOrder": 2
+            },
+            {
+              "id": "decisionmakerboughtin",
+              "label": "Decision Maker Bought-In",
+              "displayOrder": 3
+            },
+            {
+              "id": "contractsent",
+              "label": "Contract Sent",
+              "displayOrder": 4
+            },
+            {
+              "id": "closedwon",
+              "label": "Closed Won",
+              "displayOrder": 5
+            },
+            {
+              "id": "closedlost",
+              "label": "Closed Lost",
+              "displayOrder": 6
+            }
+          ]
+        }
+      ]
+    },
+    "schemas": [],
+    "associations": [
+      {
+        "typeId": 279,
+        "label": "Type 279",
+        "category": ""
+      },
+      {
+        "typeId": 1,
+        "label": "Primary",
+        "category": ""
+      },
+      {
+        "typeId": 931,
+        "label": "Billing Contact",
+        "category": ""
+      },
+      {
+        "typeId": 3,
+        "label": "Type 3",
+        "category": ""
+      },
+      {
+        "typeId": 341,
+        "label": "Type 341",
+        "category": ""
+      },
+      {
+        "typeId": 5,
+        "label": "Primary",
+        "category": ""
+      },
+      {
+        "typeId": 16,
+        "label": "Type 16",
+        "category": ""
+      }
+    ],
+    "forms": [],
+    "workflows": []
+  },
+  "scanB": {
+    "meta": {
+      "portalId": "242627105",
+      "portalName": "Hub 242627105",
+      "scannedAt": "2026-02-18T10:56:42.834Z",
+      "toolVersion": "1.0.0"
+    },
+    "summary": {
+      "complexity": "simple",
+      "totalProperties": 0,
+      "totalPipelines": 1,
+      "totalCustomObjects": 0,
+      "totalAssociationLabels": 7
+    },
+    "properties": {
+      "contacts": [],
+      "companies": [],
+      "deals": []
+    },
+    "propertyGroups": {
+      "contacts": [
+        {
+          "name": "contact_activity",
+          "label": "Contact activity",
+          "displayOrder": 0
+        },
+        {
+          "name": "deal_information",
+          "label": "Deal information",
+          "displayOrder": 0
+        },
+        {
+          "name": "order_information",
+          "label": "Order Information",
+          "displayOrder": 0
+        },
+        {
+          "name": "sales_properties",
+          "label": "Sales properties",
+          "displayOrder": 0
+        },
+        {
+          "name": "calculated_contact_information",
+          "label": "Calculated Contact Information",
+          "displayOrder": 0
+        },
+        {
+          "name": "contact_information",
+          "label": "Contact information",
+          "displayOrder": 0
+        },
+        {
+          "name": "multi_account_management",
+          "label": "Multi Account Management",
+          "displayOrder": 0
+        },
+        {
+          "name": "social_media_information",
+          "label": "Social media information",
+          "displayOrder": 0
+        },
+        {
+          "name": "web_analytics_history",
+          "label": "Web analytics history",
+          "displayOrder": 0
+        },
+        {
+          "name": "conversion_information",
+          "label": "Conversion information",
+          "displayOrder": 0
+        },
+        {
+          "name": "email_information",
+          "label": "Email information",
+          "displayOrder": 0
+        },
+        {
+          "name": "facebook_ads_properties",
+          "label": "Facebook Ads properties",
+          "displayOrder": 0
+        },
+        {
+          "name": "contact_lifecycle_stage_properties",
+          "label": "Contact Lifecycle Stage Properties",
+          "displayOrder": 0
+        },
+        {
+          "name": "sms_information",
+          "label": "SMS information",
+          "displayOrder": 0
+        }
+      ],
+      "companies": [
+        {
+          "name": "company_activity",
+          "label": "Company activity",
+          "displayOrder": 0
+        },
+        {
+          "name": "deal_information",
+          "label": "Deal information",
+          "displayOrder": 0
+        },
+        {
+          "name": "sales_properties",
+          "label": "Sales properties",
+          "displayOrder": 0
+        },
+        {
+          "name": "buyer_intent",
+          "label": "Buyer Intent",
+          "displayOrder": 0
+        },
+        {
+          "name": "company_signals",
+          "label": "Company Signals",
+          "displayOrder": 0
+        },
+        {
+          "name": "company_information",
+          "label": "Company information",
+          "displayOrder": 0
+        },
+        {
+          "name": "social_media_information",
+          "label": "Social media information",
+          "displayOrder": 0
+        },
+        {
+          "name": "web_analytics_history",
+          "label": "Web analytics history",
+          "displayOrder": 0
+        },
+        {
+          "name": "conversion_information",
+          "label": "Conversion information",
+          "displayOrder": 0
+        },
+        {
+          "name": "target_accounts_information",
+          "label": "Target accounts information",
+          "displayOrder": 0
+        },
+        {
+          "name": "company_lifecycle_stage_properties",
+          "label": "Company lifecycle stage properties",
+          "displayOrder": 0
+        }
+      ],
+      "deals": [
+        {
+          "name": "deal_activity",
+          "label": "Deal activity",
+          "displayOrder": 0
+        },
+        {
+          "name": "deal_revenue",
+          "label": "Deal revenue",
+          "displayOrder": 0
+        },
+        {
+          "name": "calculated_deal_information",
+          "label": "Calculated Deal Information",
+          "displayOrder": 0
+        },
+        {
+          "name": "deal_information",
+          "label": "Deal information",
+          "displayOrder": 0
+        },
+        {
+          "name": "historical_properties",
+          "label": "Historical Properties",
+          "displayOrder": 0
+        },
+        {
+          "name": "multi_account_management",
+          "label": "Multi Account Management",
+          "displayOrder": 0
+        },
+        {
+          "name": "predictive_deal_score_feature_properties",
+          "label": "Predictive Deal Score Feature Properties",
+          "displayOrder": 0
+        },
+        {
+          "name": "analytics_history",
+          "label": "Analytics history",
+          "displayOrder": 0
+        },
+        {
+          "name": "deal_stage_properties",
+          "label": "Deal Stage Properties",
+          "displayOrder": 0
+        }
+      ]
+    },
+    "pipelines": {
+      "deals": [
+        {
+          "id": "deals_sales_pipeline",
+          "label": "Sales Pipeline",
+          "displayOrder": 0,
+          "stages": [
+            {
+              "id": "appointmentscheduled",
+              "label": "Appointment Scheduled",
+              "displayOrder": 0
+            },
+            {
+              "id": "qualifiedtobuy",
+              "label": "Qualified To Buy",
+              "displayOrder": 1
+            },
+            {
+              "id": "presentationscheduled",
+              "label": "Presentation Scheduled",
+              "displayOrder": 2
+            },
+            {
+              "id": "decisionmakerboughtin",
+              "label": "Decision Maker Bought-In",
+              "displayOrder": 3
+            },
+            {
+              "id": "contractsent",
+              "label": "Contract Sent",
+              "displayOrder": 4
+            },
+            {
+              "id": "closedwon",
+              "label": "Closed Won",
+              "displayOrder": 5
+            },
+            {
+              "id": "closedlost",
+              "label": "Closed Lost",
+              "displayOrder": 6
+            }
+          ]
+        }
+      ]
+    },
+    "schemas": [],
+    "associations": [
+      {
+        "typeId": 279,
+        "label": "Type 279",
+        "category": ""
+      },
+      {
+        "typeId": 1,
+        "label": "Primary",
+        "category": ""
+      },
+      {
+        "typeId": 931,
+        "label": "Billing Contact",
+        "category": ""
+      },
+      {
+        "typeId": 3,
+        "label": "Type 3",
+        "category": ""
+      },
+      {
+        "typeId": 341,
+        "label": "Type 341",
+        "category": ""
+      },
+      {
+        "typeId": 5,
+        "label": "Primary",
+        "category": ""
+      },
+      {
+        "typeId": 16,
+        "label": "Type 16",
+        "category": ""
+      }
+    ],
+    "forms": [],
+    "workflows": []
+  }
+}
